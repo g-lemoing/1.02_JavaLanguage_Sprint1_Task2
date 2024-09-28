@@ -76,8 +76,8 @@ public class Entrada {
         return result;
     }
 
-    public static char llegirChar(String message) throws EntradaStringException{
-        char result = ' ';
+    public static char llegirChar(String message) {
+        char result;
         while (true){
             System.out.println(message);
             try{
@@ -91,7 +91,7 @@ public class Entrada {
         return result;
     }
 
-    public static String llegirString(String message) throws EntradaStringException{
+    public static String llegirString(String message) {
         String result;
         while(true){
             System.out.println(message);

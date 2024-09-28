@@ -1,10 +1,9 @@
 package nivell2.java.com.main;
-import nivell2.java.com.exceptions.EntradaStringException;
 import nivell2.java.com.modules.Entrada;
 
 public class Main {
 
-    public static void main(String[] args) throws EntradaStringException {
+    public static void main(String[] args) {
         byte age = Entrada.llegirByte("Introdueix la teva edat: ");
         System.out.println("La teva edat és: " + age);
 
@@ -15,7 +14,7 @@ public class Main {
         System.out.println("El valor aproximat de Pi: " + pi);
 
         double price = Entrada.llegirDouble("Quant t'ha costat el teu cafè avui?: ");
-        System.out.println("El teu cafè t'ha costat: " + price);
+        System.out.println("El teu cafè t'ha costat: " + String.format("%.2f", price));
 
         char character = Entrada.llegirChar("Entra qualsevol carácter (només un):");
         System.out.println("Has entrat el carácter: '" + character + "'");
