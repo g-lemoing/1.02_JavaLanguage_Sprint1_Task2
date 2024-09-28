@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Venda {
-    private List<Product> productList;
+    private final List<Product> productList;
     private double amount;
 
     public Venda(){
-        this.productList = new ArrayList<Product>();
+        this.productList = new ArrayList<>();
         this.amount = 0;
     }
 
@@ -22,28 +22,18 @@ public class Venda {
         return amount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
-    }
-
     public void addProductToSale(Product product){
         this.productList.add(product);
     }
 
     public void calcularTotal() throws VendaBuidaException {
         double amount = 0;
-        if(!this.productList.isEmpty()){
-            for (Product product : this.productList){
-                amount += product.getPrice();
+        if(this.productList.isEmpty()){
+            throw new VendaBuidaException();
             }
-            this.setAmount(amount);
+        for (Product product : this.productList){
+            amount += product.getPrice();
         }
-        else {
-            throw new VendaBuidaException("Per fer una venda primer has d’afegir productes.");
-        }
+            this.amount = amount;
     }
 }

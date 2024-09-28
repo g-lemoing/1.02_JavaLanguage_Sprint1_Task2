@@ -35,14 +35,14 @@ public class Main {
         System.out.println("Si calculem l'import de la cistella, es llança l'excepció:");
         try{
             venda1.calcularTotal();
-            System.out.println("L'import total de la venda és: " + venda1.getAmount() + "€");
+            System.out.println("L'import total de la venda és: " + String.format("%.2f",venda1.getAmount()) + "€");
         }catch (VendaBuidaException e){
             System.out.println(e.getMessage());
         }
 
         System.out.println("Ara provocarem una excepció IndexOutOfBoundsException apuntant a l'índex 4 de la cistella de productes que no existeix.");
         try{
-            Product item = venda1.getProductList().get(4);
+            System.out.println(venda1.getProductList().get(4));
         }catch (IndexOutOfBoundsException e){
             System.out.println(e.getMessage());
         }
